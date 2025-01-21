@@ -1,0 +1,21 @@
+{
+  "name": "@masa-dev/gas-line",
+  "version": "0.0.1",
+  "description": "Line tools for Google Apps Script",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohhh-ok/gas-line"
+  },
+  "keywords": [
+    "gas",
+    "line",
+    "google apps script"
+  ],
+  "license": "MIT"
+}
