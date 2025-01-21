@@ -1,39 +1,10 @@
-interface DoPostEvent {
-  contextPath: string;
-  parameters: Record<string, any>;
-  parameter: Record<string, any>;
-  queryString: string;
-  contentLength: number;
-  postData: {
-    contents: string;
-    length: number;
-    name: string;
-    type: string;
-  };
-}
+import { GasDoPostEvent, WebhookData } from './types';
+export * from './types';
+export * from './types.base';
+export * from './types.message';
+export * from './types.others';
+export * from './LineClient';
 
-export interface LineWebhookEvent {
-  destination: string;
-  events: LineMessageEvent[];
-}
-
-export interface LineMessageEvent {
-  type: 'message';
-  replyToken: string;
-  message: LineMessageText | any;
-}
-
-export interface LineMessage {
-  id: string;
-  type: 'text' | any;
-}
-
-export interface LineMessageText extends LineMessage {
-  type: 'text';
-  quoteToken: string;
-  text: string;
-}
-
-export function parsePostEvent(e: DoPostEvent): LineWebhookEvent {
+export function parsePostEvent(e: GasDoPostEvent): WebhookData {
   return JSON.parse(e.postData.contents);
 }
