@@ -2,6 +2,7 @@ import { GasDoPostEvent, WebhookData } from './types';
 export * from './types';
 export * from './types.base';
 export * from './types.message';
+export * from './types.follows';
 export * from './types.others';
 export * from './LineClient';
 
